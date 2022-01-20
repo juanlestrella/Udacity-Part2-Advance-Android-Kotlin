@@ -48,6 +48,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    testOptions.unitTests {
+        includeAndroidResources = true
+        returnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -94,6 +99,8 @@ dependencies {
 
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
 
+    implementation "androidx.test.espresso:espresso-idling-resource:$espressoVersion"
+
     // Testing code should not be included in the main code.
     // Once https://issuetracker.google.com/128612536 is fixed this can be fixed.
 
@@ -103,6 +110,7 @@ dependencies {
     // AndroidX Test - Instrumented testing
     androidTestImplementation "androidx.test.ext:junit:$androidXTestExtKotlinRunnerVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    androidTestImplementation "androidx.arch.core:core-testing:$archTestingVersion"
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"

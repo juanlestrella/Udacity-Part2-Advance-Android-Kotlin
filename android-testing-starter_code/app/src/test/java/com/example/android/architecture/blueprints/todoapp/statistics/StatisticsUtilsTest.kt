@@ -73,4 +73,6 @@ class StatisticsUtilsTest {
         assertEquals(0f, result.completedTasksPercent)
         assertEquals(0f, result.activeTasksPercent)
     }
+
+
 }
